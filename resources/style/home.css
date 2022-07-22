@@ -1,0 +1,28 @@
+.head {
+	color: Gold;
+	font-size: 25pt;
+	margin-top: -70px;
+	z-index: 1000;
+	font-weight: bolder;
+	font-family: arial;
+}
+
+.top_head{
+	font-size: 20pt;
+	font-weight: bolder;
+	text-align: center;
+	margin-top: -30px;
+	margin-bottom:-200px !important;
+	position: absolute;
+}
+
+.day_head {
+	font-size: 18pt;
+	color: white;
+}
+
+.desc {
+	font-size: 14pt;
+	color: grey;
+	margin-top: -50px;
+}
