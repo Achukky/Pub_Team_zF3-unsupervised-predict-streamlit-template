@@ -18,4 +18,4 @@ st.set_page_config(
 with open('resources/style/home.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         
-st.write(os.path.abspathgetcwd('../'))
+st.write(os.path.abspath('../'))
