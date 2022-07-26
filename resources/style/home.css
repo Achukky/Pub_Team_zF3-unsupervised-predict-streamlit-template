@@ -1,5 +1,5 @@
 .head {
-	color: Gold;
+	color: white;
 	font-size: 25pt;
 	margin-top: -70px;
 	z-index: 1000;
@@ -8,12 +8,12 @@
 }
 
 .top_head{
-	font-size: 20pt;
+	font-size: 16pt;
 	font-weight: bolder;
 	text-align: center;
-	margin-top: -30px;
-	margin-bottom:-200px !important;
-	position: absolute;
+	margin-bottom:-10px;
+	margin-top: 0px;
+	background-color: green;
 }
 
 .day_head {
@@ -21,8 +21,47 @@
 	color: white;
 }
 
+.main_sub_head{
+	color: white;
+	background-color: green;
+	padding-left: 15px;
+}
+
 .desc {
 	font-size: 14pt;
 	color: grey;
 	margin-top: -50px;
+	text-align: justify
+}
+
+.link {
+	background-color: brown;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: white;
+}
+
+.link:hover{
+	background-color: white;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: brown;
+}
+
+.about{
+	font-size: 14pt;
+	text-align: justify;
+	width: 90%;
+}
+
+.name{
+	font-size: 16pt;
+	margin-top: -15px;
+	color: rgb(0, 200, 0);
+}
+
+.role{
+	margin-top: -20px;
+	margin-bottom: 50px;
+	
 }
