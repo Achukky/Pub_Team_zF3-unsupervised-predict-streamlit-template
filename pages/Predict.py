@@ -11,8 +11,8 @@ st.set_page_config(
          layout="wide"
 )
 
-df_movies = pd.read_csv('resources/data/movies.csv')
-df_train = pd.read_csv('resources/data/train.csv')
+df_movies = pd.read_csv('../unsupervised_data/movies.csv')
+df_train = pd.read_csv('../unsupervised_data/train.csv')
 
 with open('resources/style/home.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
