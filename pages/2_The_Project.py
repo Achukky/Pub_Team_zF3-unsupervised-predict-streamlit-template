@@ -44,13 +44,13 @@ Generally, the ratings for movies has been good as the chart skews to the left. 
  than 1.5, 2.0 than 2.5, 3.0 than 3.5 and goes all the way.""")
  
 st.markdown("<h2 class='top_head'> What Are the Most Rated Movies of all time ? <h2>", unsafe_allow_html=True)
-st.image('resources/imgs/most_rated.png')
+st.image('resources/imgs/rated.png')
 st.write("""The most rated movies are movies produced in the 90's. Although, these chart does not determine if 
 the movies are positevly or negatively rated. It only shows the total number of ratings they are able to garner. 
 The question is, which movies are best rated..""")
 
 st.markdown("<h2 class='top_head'> What Are the Top 10 Movies with Best Average rating ? <h2>", unsafe_allow_html=True)
-st.image('resources/imgs/top_10.png')
+st.image('resources/imgs/top.png')
 st.write("""The result of the best rated movies points to the possibility that the best rated movies share genres in common.
  In fact, the best and second best movies where parts I and II of Planet Earth (same movie). From the title of the movies, 
  one can make a blind guess that movies ranked top are between action, adventure and triller genres. We explore the common 

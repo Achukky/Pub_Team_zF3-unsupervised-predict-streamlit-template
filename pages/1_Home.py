@@ -35,7 +35,7 @@ def recommend(df_ratings, metric, popularity):
 # function to get movie details from IMDB using movie id
 def get_movie(id):
     link = df_links[df_links['movieId'] == id]['imdbId'].values[0]
-    for x in range(0, 4):
+    for x in [2, 1, 0 ]:
         URL = "https://www.imdb.com/title/tt{}{}/".format("0" * x, link)
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
@@ -66,7 +66,7 @@ other_movies = list(set([ get_movie(x)['image'] for x in others]))
 with open('resources/style/home.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         
-st.markdown("<div class='head'> Spacy </div>", unsafe_allow_html=True)
+st.markdown("<div class='head'> Spacey </div>", unsafe_allow_html=True)
         
 col1, col2, col3 = st.columns([3, 1, 1])
 

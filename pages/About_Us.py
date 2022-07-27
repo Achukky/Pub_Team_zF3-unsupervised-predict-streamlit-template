@@ -11,7 +11,7 @@ st.set_page_config(
 with open('resources/style/home.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         
-st.markdown("<div class='head'> Who we are </div>", unsafe_allow_html=True)
+st.markdown("<div class='head'> Who We Are </div>", unsafe_allow_html=True)
         
 col1, col2 = st.columns([2, 1])
 

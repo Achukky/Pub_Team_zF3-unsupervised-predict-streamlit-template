@@ -56,7 +56,7 @@ def extract_year(title):
 # function to get movie details from IMDB using movie id
 def get_movie(id):
     link = df_links[df_links['movieId'] == id]['imdbId'].values[0]
-    for x in range(0, 4):
+    for x in [2, 1, 0]:
         URL = "https://www.imdb.com/title/tt{}{}/".format("0" * x, link)
         r = requests.get(URL)
         soup = BeautifulSoup(r.content, 'html5lib')
