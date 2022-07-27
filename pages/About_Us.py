@@ -35,7 +35,7 @@ team1.image('resources/imgs/joseph.jpg', use_column_width=True)
 team1.markdown("<p class='name'> Joseph Okonkwo </p>", unsafe_allow_html=True)
 team1.markdown("<p class='role'> Data Scientist </p>", unsafe_allow_html=True)
 
-team2.image('resources/imgs/ubasinachi.jpg', use_column_width=True)
+team2.image('resources/imgs/Ubasinachi.jpg', use_column_width=True)
 team2.markdown("<p class='name'> Ubasinachi Eleonu</p>", unsafe_allow_html=True)
 team2.markdown("<p class='role'>Data Analyst </p>", unsafe_allow_html=True)
 
