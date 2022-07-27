@@ -34,12 +34,10 @@ def recommend_classic(df_movies, df_ratings, metric, popularity, year):
     
     # filter the dataset to contain only ratings greather than or equal to metric
     df = df[(df['average_rating'] >= metric) & (df['count'] >= popularity)]
-
-    print(len(df))
     
     # select movie of the day and other top 5 random movies
     currentDate = datetime.date.today()
-    day_of_year = currentDate.timetuple().tm_yday
+    day_of_year = currentDate.timetuple().tm_yday % len(df)
 
     return (df.iloc[day_of_year].name, [random.choice(df.index) for x in range(6)])
 
@@ -74,7 +72,7 @@ def get_movie(id):
     
 
 # Recommend movie Daily and other popular movies 
-daily, others = recommend_classic(df_movies, df_ratings, 3.9, 100, 1999)
+daily, others = recommend_classic(df_movies, df_ratings, 3.5, 50, 1999)
 
 # get movie of the day
 movie_of_day = get_movie(daily)

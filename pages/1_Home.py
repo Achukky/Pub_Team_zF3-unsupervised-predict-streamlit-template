@@ -10,7 +10,6 @@ import random
 
 st.set_page_config(
          page_title="Recommender: Home",
-         page_icon=":movie",
          layout="wide"
 )
 
@@ -29,17 +28,21 @@ def recommend(df_ratings, metric, popularity):
     
     # select movie of the day and other top 10 random movies
     currentDate = datetime.date.today()
-    day_of_year = currentDate.timetuple().tm_yday
+    day_of_year = currentDate.timetuple().tm_yday % len(df)
 
     return (df.iloc[day_of_year].name, [random.choice(df.index) for x in range(10)])
-    
     
 # function to get movie details from IMDB using movie id
 def get_movie(id):
     link = df_links[df_links['movieId'] == id]['imdbId'].values[0]
     for x in range(0, 4):
         URL = "https://www.imdb.com/title/tt{}{}/".format("0" * x, link)
-        r = requests.get(URL)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
+            "Accept-Encoding": "*",
+            "Connection": "keep-alive"
+        }
+        r = requests.get(URL, headers=headers)
         soup = BeautifulSoup(r.content, 'html5lib')
         title = soup.find('h1', attrs= {'data-testid':"hero-title-block__title", "class":"sc-b73cd867-0"})
         if title:
@@ -50,16 +53,15 @@ def get_movie(id):
     desc = soup.find('span', attrs= {'data-testid':"plot-xs_to_m"}).text
 
     return {'title':title, 'image':cover_image, 'desc':desc}
-    
+
 # Recommend movie Daily and other popular movies 
-daily, others = recommend(df_ratings, 4.0, 100)
+daily, others = recommend(df_ratings, 3.5, 50)
+
 # get movie of the day
 movie_of_day = get_movie(daily)
 
 # get image of other movies
 other_movies = list(set([ get_movie(x)['image'] for x in others]))
-
-    
 
 with open('resources/style/home.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
